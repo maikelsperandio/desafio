@@ -1,0 +1,9 @@
+Para esse projeto funcionar é preciso apontar o IP de um servidor MongoDB, nesse servidor é preciso ter uma base com o nome senior e uma coleção com o nome cidades. Em anexo tem o arquivo cidades.csv que deve ser importado para a base mencionada anteriormente.
+
+Para importar o arquivo para o MongoDB é necessário usar os seguintes comandos:
+
+	mongoimport -d senior -c cidades --type csv --file /opt/cidades.csv --headerline
+	
+
+Após importado o arquivo para o banco, vá até o diretório desafio/src/main/resources e atualize o arquivo config.xml com as informações de acesso ao MongoDB.
+
