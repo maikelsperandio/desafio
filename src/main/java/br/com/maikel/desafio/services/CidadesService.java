@@ -29,23 +29,23 @@ public class CidadesService {
 	}
 
 	public List<Cidade> getCidades(){
-		return dao.getCidades();
+		return dao.createQuery().asList();
 	}
 
 	public Cidade getCidadeByIbge(Long id){
-		return dao.getCidadeByIbge(id);
+		return dao.createQuery().field("ibge_id").equal(id).get();
 	}
 
 	public List<Cidade> getCapitais(){
-		return dao.getCapitais();
+		return dao.createQuery().field("capital").equal("true").asList();
 	}
 
 	public List<Cidade> getCidadesByUf(String uf){
-		return dao.getCidadesByUf(uf);
+		return dao.createQuery().field("uf").equalIgnoreCase(uf).asList();
 	}
 
 	public Long getCountCidadesByUf(String uf){
-		return dao.getCountCidadesByUf(uf);
+		return dao.createQuery().field("uf").equalIgnoreCase(uf).count();
 	}
 
 	public Long getTotalCidades(){
